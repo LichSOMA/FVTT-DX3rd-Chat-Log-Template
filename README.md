@@ -7,6 +7,7 @@ element를 찾기 편하도록 PopOut! 모듈을 사용하는 걸 권장합니�
 
 # 사용방법
 1. 다음 이미지의 '본인 FVTT 주소' 안에 호스팅된 주소를 입력해주세요. (예시: 'https://sample.co.kr/')
+
 ![image](https://github.com/user-attachments/assets/5fe2f416-59d3-43c0-9c4f-dc273cdb299a)
 
 2. 사이드바의 채팅 탭을 우클릭해서 먼저 채팅창을 별도로 연 뒤, PopOut! 모듈의 기능으로 별도의 창으로 만듭니다.
@@ -20,8 +21,10 @@ element를 찾기 편하도록 PopOut! 모듈을 사용하는 걸 권장합니�
 6. 그러면 <ol id="chat-log">라는 행이 보일겁니다. 이 행을 우클릭하고 Copy → Copy element를 합니다.
 
 7. 템플릿의 <body></body> 사이에 복사한 내용을 붙여넣고 저장합니다.
+ 
 ![image](https://github.com/user-attachments/assets/7279a8d6-ed97-4adf-aa44-62c6482bc15b)
 
 8. 이제 이렇게 저장한 html 문서를 웹 브라우저로 여시면 짜잔!(모바일에서도 크기에 맞춰지니 전반적으로 보기 편하실 겁니다.)
+ 
 ![image](https://github.com/user-attachments/assets/4047d591-a944-4e9c-8852-12f6e4080590)
 
