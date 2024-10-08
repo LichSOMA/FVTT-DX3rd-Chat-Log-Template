@@ -27,5 +27,5 @@ Template for saving chat logs from FVTT DX3rd system as readable html documents
 
 8. 이제 이렇게 저장한 html 문서를 웹 브라우저로 여시면 짜잔!(모바일에서도 크기에 맞춰지니 전반적으로 보기 편하실 겁니다.)
  
-![image](https://github.com/user-attachments/assets/4047d591-a944-4e9c-8852-12f6e4080590)
+![image](https://github.com/user-attachments/assets/f195c29a-187f-466b-8876-e55c670c8d98)
 
