@@ -6,7 +6,7 @@ Template for saving chat logs from FVTT DX3rd system as readable html documents
 element를 찾기 편하도록 PopOut! 모듈을 사용하는 걸 권장합니다.
 
 # 사용방법
-1. 다음 이미지의 '본인 FVTT 주소' 안에 호스팅된 주소를 입력해주세요. (예시: 'https://sample.co.kr/')
+1. 다음 이미지의 '본인 FVTT 주소' 안에 호스팅된 주소를 입력해주세요. (예시: 'https://sample.co.kr/', 이때 마지막에 절대 /를 빠트리지 말아주세요.)
 
 ![image](https://github.com/user-attachments/assets/163967a1-37f9-4aa4-aef8-2387f73ad324)
 
