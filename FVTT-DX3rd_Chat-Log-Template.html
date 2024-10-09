@@ -1,174 +1,175 @@
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-      /* 숨기기 설정 */
-      .message-times,
-      .jump-to-bottom,
-      .effect-list,
-      button {
-          display: none;
-      }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 숨기기 설정 */
+        .message-times,
+        .jump-to-bottom,
+        .effect-list,
+        button {
+            display: none;
+        }
 
-      /* 기본 설정 */
-      body {
-          background-color: #1A1A1A;
-          color: white;
-      }
+        /* 기본 설정 */
+        body {
+            background-color: #1A1A1A;
+            color: white;
+        }
 
-      /* 챗 로그 기본 스타일 */
-      #chat-log {
-          list-style-type: none;
-          padding-left: 0;
-      }
+        /* 챗 로그 기본 스타일 */
+        #chat-log {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
-      /* message-header 스타일 */
-      .message-header {
-          display: flex;
-          align-items: center;
-          margin-bottom: 10px;
-      }
+        /* message-header 스타일 */
+        .message-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-      .message-portrait {
-          margin: 10px 0px;
-          width: 40px;
-          height: 40px;
-      }
+        .message-portrait {
+            margin: 10px 0px;
+            width: 40px;
+            height: 40px;
+        }
 
-      .message-sender {
-          font-size: 30px;
-          font-weight: bold;
-          margin: 10px 15px;
-      }
+        .message-sender {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 15px;
+        }
 
-      /* message-user에 괄호 추가 및 스타일 설정 */
-      .message-user::before {
-          content: "(";
-      }
+        /* message-user에 괄호 추가 및 스타일 설정 */
+        .message-user::before {
+            content: "(";
+        }
 
-      .message-user::after {
-          content: ")";
-      }
+        .message-user::after {
+            content: ")";
+        }
 
-      .message-user {
-          font-size: 15px;
-          color: gray;
-      }
+        .message-user {
+            font-size: 16px;
+            color: gray;
+        }
 
-      /* 아이템 이미지 숨기기 */
-      .dx3rd-item-info img {
-          display: none;
-      }
+        /* 아이템 이미지 숨기기 */
+        .dx3rd-item-info img {
+            display: none;
+        }
 
-      /* dx3rd-item-info 제목 스타일 */
-      .dx3rd-item-info h2 {
-          display: flex;
-          align-items: center;
-          margin: 0;
-      }
+        /* dx3rd-item-info 제목 스타일 */
+        .dx3rd-item-info h2 {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
 
-      .dx3rd-item-info .header .title {
-          margin-left: 0;
-      }
+        .dx3rd-item-info .header .title {
+            margin-left: 0;
+            font-size: 20px;
+        }
 
-      /* 각 로그 항목 스타일 */
-      #chat-log li {
-          border: 1px solid #666;
-          padding: 10px;
-          margin-bottom: 10px;
-          border-radius: 5px;
-          max-width: 500px;
-          width: 100%;
-          margin: 0 auto;
-      }
+        /* 각 로그 항목 스타일 */
+        #chat-log li {
+            border: 1px solid #666;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+        }
 
-      /* 각 li 요소 사이에 5px의 간격 추가 */
-      #chat-log li:not(:last-child) {
-          margin-bottom: 5px;
-      }
+        /* 각 li 요소 사이에 5px의 간격 추가 */
+        #chat-log li:not(:last-child) {
+            margin-bottom: 5px;
+        }
 
-      /* message-content와 dice-roll 간격 조정 */
-      .chat-message .message-content {
-          margin-top: 0;
-          line-height: 1.5;
-          font-size: 16px;
-          /* 폰트 크기를 12px로 설정 */
-      }
+        /* message-content와 dice-roll 간격 조정 */
+        .chat-message .message-content {
+            margin-top: 0;
+            line-height: 1.5;
+            font-size: 16px;
+            /* 폰트 크기를 12px로 설정 */
+        }
 
-      .chat-message .message-content .dice-roll {
-          margin-top: 5px;
-      }
+        .chat-message .message-content .dice-roll {
+            margin-top: 5px;
+        }
 
-      .chat-message .message-content .dx3rd-roll {
-          margin-top: -15px;
-      }
+        .chat-message .message-content .dx3rd-roll {
+            margin-top: -15px;
+        }
 
-      /* 다이스 롤 관련 */
-      .dice-roll {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-      }
+        /* 다이스 롤 관련 */
+        .dice-roll {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
 
-      .dice-roll>* {
-          flex: 1;
-      }
+        .dice-roll>* {
+            flex: 1;
+        }
 
-      .dice-roll .dice-result,
-      .dice-roll .dice-tooltip {
-          flex: 0 0 100%;
-      }
+        .dice-roll .dice-result,
+        .dice-roll .dice-tooltip {
+            flex: 0 0 100%;
+        }
 
-      .dice-roll .dice-tooltip {
-          display: none;
-      }
+        .dice-roll .dice-tooltip {
+            display: none;
+        }
 
-      .dice-roll .dice-tooltip.expanded {
-          display: block;
-      }
+        .dice-roll .dice-tooltip.expanded {
+            display: block;
+        }
 
-      .dice-roll .dice-formula,
-      .dice-roll .dice-total {
-          flex: 0 0 100%;
-          position: relative;
-          margin: 0;
-          line-height: 24px;
-          text-align: center;
-          background: rgba(0, 0, 0, 0.1);
-          border: 1px solid var(--color-border-light-2);
-          border-radius: 3px;
-          box-shadow: 0 0 2px #FFF inset;
-          word-break: break-all;
-      }
+        .dice-roll .dice-formula,
+        .dice-roll .dice-total {
+            flex: 0 0 100%;
+            position: relative;
+            margin: 0;
+            line-height: 24px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--color-border-light-2);
+            border-radius: 3px;
+            box-shadow: 0 0 2px #FFF inset;
+            word-break: break-all;
+        }
 
-      .dice-roll .dice-formula {
-          margin-bottom: 5px;
-      }
+        .dice-roll .dice-formula {
+            margin-bottom: 5px;
+        }
 
-      .dice-roll .dice-total {
-          font-size: var(--font-size-20);
-          font-weight: bold;
-      }
+        .dice-roll+.dice-roll {
+            margin-top: 5px;
+        }
 
-      .dice-roll+.dice-roll {
-          margin-top: 5px;
-      }
-  </style>
-  <script>
-      document.addEventListener("DOMContentLoaded", function () {
-          const images = document.querySelectorAll('img.message-portrait');
-          images.forEach(img => {
-              img.setAttribute('src', '본인의 FVTT 주소' + img.getAttribute('src')); // FVTT를 클라우드 호스팅 할 경우 이미지를 불러오기 위한 script
-          });
-      });
+        .dx3rd-roll .header .title {
+            margin-left: 0;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = document.querySelectorAll('img.message-portrait');
+            images.forEach(img => {
+                img.setAttribute('src', 'https://connect.foundrylichsoma.kro.kr/' + img.getAttribute('src')); // FVTT를 클라우드 호스팅 할 경우 이미지를 불러오기 위한 script
+            });
+        });
 
-      document.addEventListener("DOMContentLoaded", function () {
-          // 모든 &nbsp;를 일반 공백으로 대체
-          document.body.innerHTML = document.body.innerHTML.replace(/&nbsp;&nbsp;/g, ' ');
-      });
-  </script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 모든 &nbsp;를 일반 공백으로 대체
+            document.body.innerHTML = document.body.innerHTML.replace(/&nbsp;&nbsp;/g, ' ');
+        });
+    </script>
 </head>
 
 <body>
-  <!-- 로그 본문 -->
+    <!-- 로그 본문 -->
 </body>
