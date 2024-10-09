@@ -169,11 +169,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const images = document.querySelectorAll('img.message-portrait');
-            if (!img.getAttribute('src').startsWith('https://')) {
-                images.forEach(img => {
-                    img.setAttribute('src', '본인의 FVTT 주소' + img.getAttribute('src')); // FVTT를 클라우드 호스팅 할 경우 이미지를 불러오기 위한 script
-                });
-            }
+            images.forEach(img => {
+                if (!img.getAttribute('src').startsWith('https://')) {  // 'https://'로 시작하지 않는 경우
+                    img.setAttribute('src', '본인의 FVTT 주소' + img.getAttribute('src')); // 이미지 경로 수정
+                }
+            });
         });
 
         document.addEventListener("DOMContentLoaded", function () {
