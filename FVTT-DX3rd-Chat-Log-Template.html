@@ -169,9 +169,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const images = document.querySelectorAll('img.message-portrait');
-            images.forEach(img => {
-                img.setAttribute('src', 'https://connect.foundrylichsoma.kro.kr/' + img.getAttribute('src')); // FVTT를 클라우드 호스팅 할 경우 이미지를 불러오기 위한 script
-            });
+            if (!img.getAttribute('src').startsWith('https://')) {
+                images.forEach(img => {
+                    img.setAttribute('src', '본인의 FVTT 주소' + img.getAttribute('src')); // FVTT를 클라우드 호스팅 할 경우 이미지를 불러오기 위한 script
+                });
+            }
         });
 
         document.addEventListener("DOMContentLoaded", function () {
