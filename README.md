@@ -35,7 +35,7 @@ Template for saving chat logs from FVTT DX3rd system as readable html documents
 
 1. MRKB UI의 로그 저장 버튼을 누른다.
 
-![image](https://github.com/user-attachments/assets/73d36d7e-0e25-4b4e-899f-bf3fb4cfc2f4)
+![image](https://github.com/user-attachments/assets/e0b1254a-31c9-41c0-ab58-b20a92094326)
 
 2. 저장된 로그의 내용을 템플릿의 body 안에 복사한 내용을 붙여넣고 저장합니다.
  
